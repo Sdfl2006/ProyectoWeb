@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Colección Pokémon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-gradient"></div>
+  <main class="container">
+    <h1>Mi Colección</h1>
+    <div class="progress-info">
+      <span id="progress-text">0/150 Pokémon</span>
+    </div>
+    <input class="search" type="text" placeholder="Buscar Pokémon...">
+    <div class="filters">
+      <button class="filter active" type="button">Todos</button>
+      <button class="filter" type="button">Grass</button>
+      <button class="filter" type="button">Fire</button>
+      <button class="filter" type="button">Water</button>
+      <button class="filter" type="button">Bug</button>
+      <button class="filter" type="button">Ground</button>
+      <button class="filter" type="button">Rock</button>
+      <button class="filter" type="button">Dark</button>
+      <button class="filter" type="button">Ghost</button>
+      <button class="filter" type="button">Poison</button>
+      <button class="filter" type="button">Normal</button>
+      <button class="filter" type="button">Electric</button>
+      <button class="filter" type="button">Steel</button>
+      <button class="filter" type="button">Fighting</button>
+      <button class="filter" type="button">Flying</button>
+      <button class="filter" type="button">Dragon</button>
+      <button class="filter" type="button">Ice</button>
+      <button class="filter" type="button">Psychic</button>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" id="progress-bar" style="width: 0%;"></div>
+    </div>
+    <section class="grid" id="pokemon-grid">
+      <!-- Aquí se insertarán las cartas dinámicamente -->
+    </section>
+  </main>
+  <nav class="bottom-nav">
+    <button class="nav-btn active" type="button">
+      <span class="icon">🏠</span>
+      <span>Colección</span>
+    </button>
+    <button class="nav-btn" type="button">
+      <span class="icon">📦</span>
+      <span>Sobres</span>
+    </button>
+    <button class="nav-btn" type="button">
+      <span class="icon">🤝</span>
+      <span>Intercambio</span>
+    </button>
+  </nav>
+
+  <!-- Templates para cartas -->
+  <template id="card-unlocked">
+    <button class="card" type="button">
+      <img>
+      <span class="name"></span>
+      <span class="number"></span>
+      <span class="hp"></span>
+    </button>
+  </template>
+  <template id="card-locked">
+    <button class="card locked" type="button" disabled>
+      <span class="number"></span>
+      <span class="unknown">???</span>
+    </button>
+  </template>
+
+  <script src="main.js"></script>
+</body>
+</html>
