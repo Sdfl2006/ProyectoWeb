@@ -1,5 +1,5 @@
 // IDs desbloqueados de ejemplo
-const desbloqueados = [];
+const desbloqueados = JSON.parse(localStorage.getItem('coleccionPokemon')) || [];
 
 const grid = document.getElementById('pokemon-grid');
 const unlockedTemplate = document.getElementById('card-unlocked');

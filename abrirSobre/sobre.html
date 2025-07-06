@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Abrir Sobres</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+
+    <main class="container">
+        <h1>Abrir Sobres</h1>
+
+        <div class="paquete">
+            <div class="icon-paquete">✨</div> 
+            <div class="title-paquete">POKEMON</div>
+            <div class="subtitle-paquete">TRADING CARD GAME</div>
+            <div class="info-paquete">5 CARTAS</div>
+            <div class="icon2-paquete">🎁</div> 
+        </div>
+
+        <button id="abrir-sobre-btn" class="btn" type="button">
+            <span>Abrir Sobre</span>
+        </button>
+
+        <section id="cartas-reveladas" class="grid">
+        </section>
+
+        <section class="info" >
+            <h2>Contenido del sobre</h2>
+            <ul id="viñetas">
+                <li>Cinco cartas aleatorias</li>
+                <li>Posibilidad de cartas raras</li>
+                <li>¡Puedes coleccionar todos los pokemon!</li>
+            </ul>
+                
+        </section>
+    </main>
+
+    <!-- PANEL DE NAVEGACIÓN -->
+    <nav class="bottom-nav">
+        <a href="../vistaPrincipal/index.html" class="nav-btn">
+            <span class="icon">🏠</span>
+            <span>Colección</span>
+        </a>
+
+        <button class="nav-btn active" type="button">
+            <span class="icon">📦</span>
+            <span>Sobres</span>
+        </button>
+        
+        <a href="../intercambioCartas/intercambio.html" class="nav-btn">
+            <span class="icon">🤝</span>
+            <span>Intercambio</span>
+        </a>
+    </nav>
+
+<!-- TEMPLATE DE CARTA -->
+  <template id="card-unlocked">
+    <div class="card">
+      <img>
+      <span class="name"></span>
+      <span class="number"></span>
+    </div>
+  </template>
+
+    <script src="sobre.js"></script>
+</body>
+</html>
