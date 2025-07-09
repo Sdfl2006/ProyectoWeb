@@ -1,0 +1,249 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.background-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #4f49ff 0%, #7ff583 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 32px 16px 100px 16px;
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.status-conexion {
+  background: rgba(0, 0, 0, 0.2);
+  color: #eee;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.interfaz-intercambio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.seccion-usuario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seccion-usuario h2 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+.seccion-usuario h3 {
+  color: #eee;
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.oferta {
+  width: 100%;
+  max-width: 200px;
+  min-height: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 0 auto;
+}
+
+.card-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.mini-card:hover {
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.mini-card.selected {
+  border-color: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+  transform: scale(1.05);
+}
+
+.mini-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.mini-card .name {
+  font-size: 0.8em;
+  color: #fff;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.btn {
+  background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+  color: #fff;
+  border: none;
+  width: 100%;
+  max-width: 340px;
+  padding: 16px;
+  border-radius: 18px;
+  font-size: 1.2em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #ddd;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(255,255,255,0.18);
+  border-top: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 18px;
+  border-radius: 14px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-btn.active,
+.nav-btn:hover {
+  background: #fff;
+  color: #4f49ff;
+}
+
+.nav-btn .icon {
+  font-size: 1.3em;
+}
+
+.card {
+  background: rgba(255,255,255,0.22);
+  border-radius: 18px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+  min-height: 170px;
+}
+.card.grass { background: linear-gradient(135deg, #a8e063 60%, #56ab2f 100%); }
+.card.fire { background: linear-gradient(135deg, #ffb347 60%, #ff5858 100%); }
+.card.water { background: linear-gradient(135deg, #43cea2 60%, #185a9d 100%); }
+.card.electric { background: linear-gradient(135deg, #ffed49 60%, #c2a200 100%); }
+.card.bug { background: linear-gradient(135deg, #b6e05c 60%, #729f3f 100%); }
+.card.normal { background: linear-gradient(135deg, #e0e0e0 60%, #454545 100%); }
+.card.poison { background: linear-gradient(135deg, #c183c1 60%, #7c538c 100%); }
+.card.ground { background: linear-gradient(135deg, #e0c068 60%, #927d44 100%); }
+.card.fairy { background: linear-gradient(135deg, #fceaff 60%, #ec8fe6 100%); }
+.card.fighting { background: linear-gradient(135deg, #ffb6b6 60%, #d56723 100%); }
+.card.psychic { background: linear-gradient(135deg, #f85888 60%, #a13959 100%); }
+.card.rock { background: linear-gradient(135deg, #d1c17d 60%, #786824 100%); }
+.card.ghost { background: linear-gradient(135deg, #a292bc 60%, #705898 100%); }
+.card.ice { background: linear-gradient(135deg, #bce6e6 60%, #51c4e7 100%); }
+.card.dragon { background: linear-gradient(135deg, #a27dfa 60%, #7038f8 100%); }
+.card.steel { background: linear-gradient(135deg, #d1d1e0 60%, #787887 100%); }
+.card.dark { background: linear-gradient(135deg, #a9a9a9 60%, #333 100%); }
+.card.flying { background: linear-gradient(135deg, #c6e2ff 60%, #3a5ba9 100%); }
+
+.card img {
+  width: 90px;
+  height: 90px;
+}
+.card .name {
+  font-weight: 700;
+  color: #fff;
+}
+.card .hp {
+  background: rgba(255,255,255,0.7);
+  color: #333;
+  font-size: 0.85em;
+  border-radius: 8px;
+  padding: 2px 8px;
+  margin-top: 20px;
+  font-weight: 600;
+}

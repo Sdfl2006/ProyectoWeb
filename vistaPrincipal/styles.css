@@ -110,6 +110,7 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-top: 10px;
+  grid-auto-rows: 1fr;
 }
 
 /* --- CARTAS --- */
@@ -177,9 +178,9 @@ h1 {
 .card.grass { background: linear-gradient(135deg, #a8e063 60%, #56ab2f 100%); }
 .card.fire { background: linear-gradient(135deg, #ffb347 60%, #ff5858 100%); }
 .card.water { background: linear-gradient(135deg, #43cea2 60%, #185a9d 100%); }
-.card.electric { background: linear-gradient(135deg, #ffed49 60%, #ffd600 100%); }
+.card.electric { background: linear-gradient(135deg, #ffed49 60%, #c2a200 100%); }
 .card.bug { background: linear-gradient(135deg, #b6e05c 60%, #729f3f 100%); }
-.card.normal { background: linear-gradient(135deg, #e0e0e0 60%, #bdbdbd 100%); }
+.card.normal { background: linear-gradient(135deg, #e0e0e0 60%, #454545 100%); }
 .card.poison { background: linear-gradient(135deg, #c183c1 60%, #7c538c 100%); }
 .card.ground { background: linear-gradient(135deg, #e0c068 60%, #927d44 100%); }
 .card.fairy { background: linear-gradient(135deg, #fceaff 60%, #ec8fe6 100%); }

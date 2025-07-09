@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Intercambio de Cartas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+  <link rel="stylesheet" href="intercambio.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+
+    <main class="container">
+        <h1>Intercambio de Cartas</h1>
+
+        <div class="status-conexion">
+            <p id="mensaje-status">Buscando a otro usuario para intercambiar...</p>
+        </div>
+
+        <div class="interfaz-intercambio">
+            <div class="seccion-usuario" id="mi-seccion">
+                <h2>Tu Oferta</h2>
+                <div class="oferta" id="mi-oferta-display">
+                    <div class="card-placeholder">?</div>
+                </div>
+
+                <h3>Elige una carta de tu colección:</h3>
+                <div id="mi-coleccion-grid" class="mini-grid">
+                </div>
+            </div>
+
+            <div class="seccion-usuario" id="oponente-seccion">
+                <h2>Oponente</h2>
+                <div class="oferta" id="oponente-oferta-display">
+                    <div class="card-placeholder">?</div>
+                </div>
+            </div>
+        </div>
+
+        <button id="intercambiar-btn" class="btn" type="button" disabled>
+            Intercambiar
+        </button>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="../vistaPrincipal/index.html" class="nav-btn">
+            <span class="icon">🏠</span>
+            <span>Colección</span>
+        </a>
+        <a href="../abrirSobre/sobre.html" class="nav-btn">
+            <span class="icon">📦</span>
+            <span>Sobres</span>
+        </a>
+        <button class="nav-btn active" type="button">
+            <span class="icon">🤝</span>
+            <span>Intercambio</span>
+        </button>
+    </nav>
+
+    <script src="intercambio.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@ async function abrirSobre() {
   contenedorCartas.innerHTML = '';
 
   const idsNuevasCartas = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     const randomId = Math.floor(Math.random() * 150) + 1;
     idsNuevasCartas.push(randomId);
   }
