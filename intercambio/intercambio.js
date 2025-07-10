@@ -7,14 +7,21 @@ const statusText = document.getElementById('mensaje-status');
 let miOferta = null;
 let ofertaOponente = null;
 let canalIntercambio;
+let ably;
 
 function conectarAIntercambio() {
-  const ably = new Ably.Realtime('9ZqOdA.P911zw:2Low37q6Qn4hI6FRXm6PkzQMIMviJLE5c5peCo0raDY');
+  const clientId = 'user-' + Math.random().toString(16).substr(2, 8);
+
+  const ably = new Ably.Realtime({key: '9ZqOdA.P911zw:2Low37q6Qn4hI6FRXm6PkzQMIMviJLE5c5peCo0raDY', clientId: clientId});
   canalIntercambio = ably.channels.get('canal-pokemon-trade');
 
   statusText.textContent = 'Conectado. Esperando oferta del oponente...';
 
   canalIntercambio.subscribe('oferta-carta', (mensaje) => {
+   if (mensaje.clientId === ably.auth.clientId) {
+      return; 
+    }
+
     const dataOponente = mensaje.data;
     ofertaOponente = dataOponente;
 
