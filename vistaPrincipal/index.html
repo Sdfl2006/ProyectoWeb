@@ -38,8 +38,9 @@
       <div class="progress" id="progress-bar" style="width: 0%;"></div>
     </div>
     <section class="grid" id="pokemon-grid">
-      <!-- Aquí se insertarán las cartas dinámicamente -->
     </section>
+
+    <div id="detalle-pokemon" style="display:none; margin-top:24px;"></div>
   </main>
 
   <nav class="bottom-nav">
@@ -59,7 +60,6 @@
     </a>
   </nav>
 
-  <!-- Templates para cartas -->
   <template id="card-unlocked">
     <button class="card" type="button">
       <img>
@@ -74,6 +74,18 @@
       <span class="unknown">???</span>
     </button>
   </template>
+
+  <!-- Modal Detalle Pokémon -->
+  <div id="pokemon-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <img id="modal-img" src="" alt="" />
+      <h2 id="modal-nombre"></h2>
+      <p id="modal-tipo"></p>
+      <p id="modal-hp"></p>
+      <!-- Puedes agregar más datos aquí -->
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

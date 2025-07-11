@@ -273,6 +273,72 @@ h1 {
   font-size: 1.3em;
 }
 
+/* Modal fondo */
+#pokemon-modal.modal {
+  display: none; /* Por defecto oculto */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+  transition: background 0.2s;
+}
+
+/* Contenido del modal */
+#pokemon-modal .modal-content {
+  background: #fff;
+  margin: 60px auto;
+  padding: 32px 24px 24px 24px;
+  border-radius: 18px;
+  max-width: 350px;
+  box-shadow: 0 8px 32px #0004;
+  position: relative;
+  animation: modalIn 0.25s;
+}
+
+@keyframes modalIn {
+  from { transform: translateY(-40px) scale(0.95); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Botón de cerrar */
+#close-modal {
+  position: absolute;
+  top: 12px; right: 16px;
+  font-size: 2em;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#close-modal:hover { color: #e74c3c; }
+
+/* Imagen del Pokémon */
+#modal-img {
+  display: block;
+  margin: 0 auto 16px auto;
+  width: 120px;
+  filter: drop-shadow(0 2px 8px #0002);
+}
+
+/* Nombre */
+#modal-nombre {
+  text-align: center;
+  margin: 0 0 8px 0;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+/* Tipo y HP */
+#modal-tipo, #modal-hp {
+  text-align: center;
+  margin: 0 0 6px 0;
+  font-size: 1.1em;
+  color: #555;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .container {
