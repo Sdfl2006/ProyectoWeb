@@ -30,3 +30,5 @@ Archivos:
 El proyecto está organizado en tres carpetas, cada una representa una funcionalidad principal de la aplicación.
 
 Ejecución del Proyecto:
+Este proyecto ha sido desplegado utilizando GitHub Pages y está disponible. No requiere de ningún tipo de instalación, solamente accede al siguiente URL desde cualquier navegador web: 
+
