@@ -8,17 +8,20 @@ let miOferta = null;
 let ofertaOponente = null;
 let canalIntercambio;
 let ably;
+let yoListoParaIntercambiar = false;
+let oponenteListoParaIntercambiar = false;
+
 
 function conectarAIntercambio() {
   const clientId = 'user-' + Math.random().toString(16).substr(2, 8);
 
-  const ably = new Ably.Realtime({key: '9ZqOdA.P911zw:2Low37q6Qn4hI6FRXm6PkzQMIMviJLE5c5peCo0raDY', clientId: clientId});
+  ably = new Ably.Realtime({key: '9ZqOdA.P911zw:2Low37q6Qn4hI6FRXm6PkzQMIMviJLE5c5peCo0raDY', clientId: clientId});
   canalIntercambio = ably.channels.get('canal-pokemon-trade');
 
   statusText.textContent = 'Conectado. Esperando oferta del oponente...';
 
   canalIntercambio.subscribe('oferta-carta', (mensaje) => {
-   if (mensaje.clientId === ably.auth.clientId) {
+    if (mensaje.clientId === ably.auth.clientId) {
       return; 
     }
 
@@ -34,6 +37,12 @@ function conectarAIntercambio() {
     `;
     
     statusText.textContent = 'El oponente ha hecho una oferta';
+    verificarEstadoIntercambio();
+  });
+
+  canalIntercambio.subscribe('listo-intercambiar', (mensaje) => {
+    if (mensaje.clientId === ably.auth.clientId) return;
+    oponenteListoParaIntercambiar = true;
     verificarEstadoIntercambio();
   });
 }
@@ -96,13 +105,36 @@ function seleccionarCarta(pokeData, cardElement) {
 function verificarEstadoIntercambio() {
   if (miOferta && ofertaOponente) {
     intercambiarBtn.disabled = false;
-    statusText.textContent = 'Ambios usuarios hecho su oferta. Presiona Intercambiar para confirmar este intercambio.';
+    if (yoListoParaIntercambiar && oponenteListoParaIntercambiar) {
+      realizarIntercambio();
+    } else if (yoListoParaIntercambiar) {
+      statusText.textContent = 'Esperando que el oponente confirme el intercambio...';
+    } else if (oponenteListoParaIntercambiar) {
+      statusText.textContent = 'El oponente está listo. Presiona Intercambiar para confirmar.';
+    } else {
+      statusText.textContent = 'Ambos usuarios han hecho su oferta. Presiona Intercambiar para confirmar este intercambio.';
+    }
   }
 }
 
 function realizarIntercambio() {
   if (!miOferta || !ofertaOponente) {
     alert("Ambos jugadores deben ofrecer una carta.");
+    return;
+  }
+
+  if (!yoListoParaIntercambiar) {
+    yoListoParaIntercambiar = true;
+    canalIntercambio.publish('listo-intercambiar', { listo: true });
+    statusText.textContent = 'Esperando que el oponente confirme el intercambio...';
+    alert('Has confirmado tu intercambio. Esperando que el oponente también confirme.');
+    verificarEstadoIntercambio();
+    return;
+  }
+
+  if (!oponenteListoParaIntercambiar) {
+    statusText.textContent = 'Esperando que el oponente confirme el intercambio...';
+    alert('Aún falta que el oponente confirme el intercambio.');
     return;
   }
 
