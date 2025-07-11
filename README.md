@@ -12,7 +12,7 @@ Características Principales:
 Intercambio en Tiempo Real: Existe una interfaz que permite a dos usuarios conectarse e intercambiar cartas en tiempo real, utilizando un WebSocket para la sincronización.
 
 Archivos:
-/ vista-principal/
+/ ProyectoWeb/
 ├── README.md
 └── docs/
     ├── index.html          (Página principal que muestra la colección de cartas)
