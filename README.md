@@ -12,20 +12,24 @@ Características Principales:
 Intercambio en Tiempo Real: Existe una interfaz que permite a dos usuarios conectarse e intercambiar cartas en tiempo real, utilizando un WebSocket para la sincronización.
 
 Archivos:
-├── vista-principal/
-│   ├── index.html      (Página principal que muestra la colección de cartas)
-│   ├── styles.css
-│   └── main.js
-│
-├── abrir-un-sobre/
-│   ├── sobre.html      (Página para la funcionalidad de abrir sobres)
-│   ├── sobre.css
-│   └── sobre.js
-│
-└── intercambio/
-    ├── intercambio.html      (Página para la funcionalidad de intercambio en tiempo real)
-    ├── intercambio.css
-    └── intercambio.js
+/ vista-principal/
+├── README.md
+└── docs/
+    ├── index.html          (Página principal que muestra la colección de cartas)
+    │
+    ├── principal/
+    │   ├── styles.css
+    │   └── main.js
+    │
+    ├── abrirSobre/
+    │   ├── sobre.html      (Página para la funcionalidad de abrir sobres)
+    │   ├── sobre.css
+    │   └── sobre.js
+    │
+    └── intercambio/
+        ├── intercambio.html  (Página para la funcionalidad de intercambio en tiempo real)
+        ├── intercambio.css
+        └── intercambio.js
     
 El proyecto está organizado en tres carpetas, cada una representa una funcionalidad principal de la aplicación.
 
